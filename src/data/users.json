@@ -1,0 +1,44 @@
+[
+  {
+  "id": 100,
+  "username": "Elon Reeve Musk",
+  "tweets": 777,
+  "followers": 100500,
+  "avatar": "https://cdn-icons-png.flaticon.com/512/2922/2922506.png"
+  },
+  {
+  "id": 101,
+  "username": "Mango",
+  "tweets": 500,
+  "followers": 9500,
+  "avatar": "https://cdn-icons-png.flaticon.com/512/1998/1998592.png"
+  },
+  {
+  "id": 102,
+  "username": "Kiwi",
+  "tweets": 865,
+  "followers": 100600,
+  "avatar": "https://cdn-icons-png.flaticon.com/512/616/616438.png"
+  },
+  {
+  "id": 103,
+  "username": "Ajax",
+  "tweets": 389,
+  "followers": 7505,
+  "avatar": "https://cdn-icons-png.flaticon.com/512/1623/1623681.png"
+  },
+  {
+  "id": 104,
+  "username": "Jay",
+  "tweets": 250,
+  "followers": 500,
+  "avatar": "https://cdn-icons-png.flaticon.com/512/2977/2977285.png"
+  },
+  {
+  "id": 105,
+  "username": "Poly",
+  "tweets": 9595,
+  "followers": 1098500,
+  "avatar": "https://cdn-icons-png.flaticon.com/512/1998/1998749.png"
+  }
+]
