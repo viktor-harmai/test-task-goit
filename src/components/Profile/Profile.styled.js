@@ -22,6 +22,14 @@ export const ProfileCard = styled.article`
   box-shadow: -2.5777px 6.87386px 20.6216px rgba(0, 0, 0, 0.23);
 
   border-radius: 20px;
+
+  &:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+    box-shadow: 10px 11px 10px -4px rgba(0, 0, 0, 0.48);
+    -webkit-box-shadow: 10px 11px 10px -4px rgba(0, 0, 0, 0.48);
+    -moz-box-shadow: 10px 11px 10px -4px rgba(0, 0, 0, 0.48);
+  }
 `;
 
 export const Logo = styled.img`
@@ -37,18 +45,7 @@ export const ProfileCardWrap = styled.div`
 `;
 
 export const ProfileCardThumb = styled.div`
-  margin-bottom: 70px;
-
-  /* width: 80px;
-  height: 80px;
-
-  border: 8px solid #ebd8ff;
-  border-radius: 50%; */
-
-  /* background: #ebd8ff;
-  box-shadow: 0px 4.39163px 4.39163px rgba(0, 0, 0, 0.06),
-    inset 0px -2.19582px 4.39163px #ae7be3,
-    inset 0px 4.39163px 3.29372px #fbf8ff; */
+  margin-bottom: 45px;
 `;
 
 export const Rectangle = styled.div`
@@ -95,7 +92,6 @@ export const Inner = styled.div`
   height: 62px;
 
   border-radius: 50%;
-
   background: linear-gradient(
     114.99deg,
     #471ca9 -0.99%,
@@ -103,7 +99,6 @@ export const Inner = styled.div`
     #4b2a99 78.99%
   );
   box-shadow: -2.5777px 6.87386px 20.6216px rgba(0, 0, 0, 0.23);
-
   transition: all 0.3s ease-in-out;
 `;
 
@@ -116,11 +111,11 @@ export const Avatar = styled.img`
 `;
 
 export const Name = styled.h2`
-  margin-bottom: 26px;
+  margin-bottom: 15px;
 
   font-family: 'Montserrat';
   font-weight: 400;
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.2;
   text-transform: uppercase;
 
@@ -133,7 +128,7 @@ export const Stats = styled.ul`
   align-items: center;
   justify-content: center;
 
-  margin-bottom: 26px;
+  margin-bottom: 21px;
 `;
 
 export const Item = styled.li`
@@ -146,7 +141,7 @@ export const Item = styled.li`
   color: #ebd8ff;
 
   :first-child {
-    margin-bottom: 16px;
+    margin-bottom: 10px;
   }
 `;
 

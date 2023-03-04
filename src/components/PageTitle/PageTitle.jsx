@@ -1,9 +1,13 @@
 import PropTypes from 'prop-types';
 
-import { Title } from './PageTitle.styled';
+import { Header, Title } from './PageTitle.styled';
 
 export const PageTitle = ({ text }) => {
-  return <Title>{text}</Title>;
+  return (
+    <Header>
+      <Title>{text}</Title>
+    </Header>
+  );
 };
 
 PageTitle.propTypes = {

@@ -1,9 +1,10 @@
-// import PropTypes from 'prop-types';
-
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import Numeral from 'react-numeral';
-
 import { increment, decrement } from 'redux/usersSlice';
+
+import LogoSvg from 'img/Logo.svg';
+import { Button } from 'components/Button';
+import Numeral from 'react-numeral';
 
 import {
   ProfileItem,
@@ -12,6 +13,7 @@ import {
   ProfileCardWrap,
   ProfileCardThumb,
   Avatar,
+  Name,
   Stats,
   Item,
   Background,
@@ -20,15 +22,9 @@ import {
   Inner,
 } from './Profile.styled';
 
-import LogoSvg from 'img/Logo.svg';
-
-import { Button } from 'components/Button';
-
 export const Profile = ({
-  user: { id, tweets, followers, avatar, btnClick },
+  user: { id, username, tweets, followers, avatar, btnClick },
 }) => {
-  // const formatFollowers = new Numeral(followers).format('0,0');
-
   const dispatch = useDispatch();
 
   const handleBtnClick = () => {
@@ -38,9 +34,6 @@ export const Profile = ({
       dispatch(decrement(id));
     }
   };
-
-  // const handleIncrement = () => dispatch(increment(id));
-  // const handleDecrement = () => dispatch(decrement(id));
 
   return (
     <ProfileItem>
@@ -58,6 +51,8 @@ export const Profile = ({
             </Rectangle>
           </ProfileCardThumb>
 
+          <Name>{username}</Name>
+
           <Stats>
             <Item>
               <span>{tweets}</span>
@@ -65,15 +60,10 @@ export const Profile = ({
             </Item>
             <Item>
               <Numeral value={followers} format={'0,0'} />
-              {/* <span>{formatFollowers}</span> */}
               <span> Followers</span>
             </Item>
           </Stats>
-          {/* {!btnClick ? (
-            <Button onClick={handleIncrement} text={'Follow'} />
-          ) : (
-            <Button onClick={handleDecrement} text={'Following'} />
-          )} */}
+
           <Button onClick={handleBtnClick} btnClick={btnClick} />
         </ProfileCardWrap>
         <Background></Background>
@@ -82,11 +72,13 @@ export const Profile = ({
   );
 };
 
-// Profile.propTypes = {
-//   user: PropTypes.exact({
-//     id: PropTypes.number.isRequired,
-//     tweets: PropTypes.number.isRequired,
-//     followers: PropTypes.number.isRequired,
-//     avatar: PropTypes.string.isRequired,
-//   }),
-// };
+Profile.propTypes = {
+  user: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    username: PropTypes.string.isRequired,
+    tweets: PropTypes.number.isRequired,
+    followers: PropTypes.number.isRequired,
+    avatar: PropTypes.string.isRequired,
+  }),
+  btnClick: PropTypes.bool,
+};

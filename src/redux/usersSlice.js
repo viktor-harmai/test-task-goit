@@ -1,6 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { toast } from 'react-toastify';
 
 import users from 'data/users.json';
+
+const toastOptions = {
+  position: toast.POSITION.BOTTOM_RIGHT,
+  theme: 'dark',
+};
 
 const usersInitialState = {
   users,
@@ -14,18 +20,21 @@ const usersSlice = createSlice({
       const user = state.users.find(user => user.id === action.payload);
       user.followers += 1;
       user.btnClick = true;
-      console.log(user.username);
-      console.log(user.id);
-      console.log(action.payload);
-      console.log(user.btnClick);
-
-      state.isClick = true;
+      toast.success(
+        `Added follower for ${user.username}. All fillovers: ${user.followers}`,
+        toastOptions
+      );
     },
+
     decrement(state, action) {
       const user = state.users.find(user => user.id === action.payload);
       user.followers -= 1;
       user.btnClick = false;
-      state.isClick = false;
+      toast.warn(
+        `Removed follower for ${user.username}.
+        All fillovers:${user.followers}`,
+        toastOptions
+      );
     },
   },
 });

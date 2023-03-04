@@ -17,8 +17,6 @@ export const Btn = styled.button`
 
   color: #373737;
 
-  /* background: #ebd8ff; */
-
   box-shadow: 0px 3.4px 3.4px rgba(0, 0, 0, 0.25);
   border: none;
   border-radius: 10px;
@@ -26,9 +24,4 @@ export const Btn = styled.button`
   background-color: ${props => {
     return props.status ? '#5cd3a8' : '#ebd8ff';
   }};
-
-  /* &:hover,
-  &:focus {
-    background-color: #5cd3a8;
-  } */
 `;

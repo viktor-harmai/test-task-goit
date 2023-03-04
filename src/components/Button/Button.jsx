@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { Btn } from './Button.styled';
 
 export const Button = ({ onClick, btnClick }) => {
@@ -9,6 +9,7 @@ export const Button = ({ onClick, btnClick }) => {
   );
 };
 
-// Button.propTypes = {
-//   onClick: PropTypes.func.isRequired,
-// };
+Button.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  btnClick: PropTypes.bool,
+};

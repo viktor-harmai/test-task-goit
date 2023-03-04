@@ -1,20 +1,16 @@
 import { PageTitle } from 'components/PageTitle';
 import { ProfileBoard } from 'components/ProfileBoard';
-import { Container } from './App.styled';
+import { Container, Section } from './App.styled';
 
 export const App = () => {
   return (
-    <main>
-      <section>
-        <Container>
-          <PageTitle text=" User profile cards" />
-        </Container>
-      </section>
-      <section>
-        <Container>
+    <Container>
+      <PageTitle text=" User profile cards" />
+      <main>
+        <Section>
           <ProfileBoard />
-        </Container>
-      </section>
-    </main>
+        </Section>
+      </main>
+    </Container>
   );
 };
