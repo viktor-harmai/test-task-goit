@@ -8,8 +8,10 @@ export const Header = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+`;
 
+export const HeaderBox = styled.div`
+  padding: 20px;
   background: linear-gradient(
     114.99deg,
     #471ca9 -0.99%,

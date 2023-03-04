@@ -1,11 +1,15 @@
 import PropTypes from 'prop-types';
-
-import { Header, Title } from './PageTitle.styled';
+import { Box } from 'components/Box';
+import { Header, HeaderBox, Title } from './PageTitle.styled';
 
 export const PageTitle = ({ text }) => {
   return (
     <Header>
-      <Title>{text}</Title>
+      <Box>
+        <HeaderBox>
+          <Title>{text}</Title>
+        </HeaderBox>
+      </Box>
     </Header>
   );
 };
