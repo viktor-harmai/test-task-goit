@@ -10,8 +10,14 @@ export const Header = styled.header`
   align-items: center;
 `;
 
-export const HeaderBox = styled.div`
+export const Title = styled.h1`
   padding: 20px;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  color: #ebd8ff;
+
   background: linear-gradient(
     114.99deg,
     #471ca9 -0.99%,
@@ -22,11 +28,4 @@ export const HeaderBox = styled.div`
 
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-`;
-
-export const Title = styled.h1`
-  text-align: center;
-  text-transform: uppercase;
-
-  color: #ebd8ff;
 `;
