@@ -11,13 +11,12 @@ import {
   REGISTER,
 } from 'redux-persist';
 
-import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web
+import storage from 'redux-persist/lib/storage';
 
 import { usersReducer } from './usersSlice';
 const persistConfig = {
   key: 'users',
   storage,
-  blacklist: ['isClick'],
 };
 
 const rootReducer = combineReducers({

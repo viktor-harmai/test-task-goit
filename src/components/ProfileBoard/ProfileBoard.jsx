@@ -1,11 +1,15 @@
 import { useSelector } from 'react-redux';
-import { selectUsers } from 'redux/selectors';
+import {
+  selectUsers,
+  // selectIsClick
+} from 'redux/selectors';
 
 import { Profile } from 'components/Profile';
 import { ProfileList } from './ProfileBoard.styled';
 
 export const ProfileBoard = () => {
   const { users } = useSelector(selectUsers);
+  // const isClick = useSelector(selectIsClick);
 
   console.log(users);
 

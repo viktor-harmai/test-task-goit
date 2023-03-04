@@ -4,20 +4,31 @@ import users from 'data/users.json';
 
 const usersInitialState = {
   users,
-  isClick: false,
 };
 
 const usersSlice = createSlice({
   name: 'users',
   initialState: usersInitialState,
   reducers: {
-    addFollower(state, action) {
+    increment(state, action) {
       const user = state.users.find(user => user.id === action.payload);
-      console.log(user);
+      user.followers += 1;
+      user.btnClick = true;
+      console.log(user.username);
+      console.log(user.id);
+      console.log(action.payload);
+      console.log(user.btnClick);
 
       state.isClick = true;
     },
-    decrementFollowesr(state, action) {},
+    decrement(state, action) {
+      const user = state.users.find(user => user.id === action.payload);
+      user.followers -= 1;
+      user.btnClick = false;
+      state.isClick = false;
+    },
   },
 });
+
+export const { increment, decrement } = usersSlice.actions;
 export const usersReducer = usersSlice.reducer;
