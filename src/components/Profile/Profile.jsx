@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { increment, decrement } from 'redux/usersSlice';
+import { toggleBtn } from 'redux/usersSlice';
 
 import LogoSvg from 'img/Logo.svg';
 import { Button } from 'components/Button';
@@ -28,11 +28,7 @@ export const Profile = ({
   const dispatch = useDispatch();
 
   const handleBtnClick = () => {
-    if (!btnClick) {
-      dispatch(increment(id));
-    } else {
-      dispatch(decrement(id));
-    }
+    dispatch(toggleBtn(id));
   };
 
   return (

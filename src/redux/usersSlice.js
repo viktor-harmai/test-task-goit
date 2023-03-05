@@ -16,28 +16,35 @@ const usersSlice = createSlice({
   name: 'users',
   initialState: usersInitialState,
   reducers: {
-    increment(state, action) {
-      const user = state.users.find(user => user.id === action.payload);
-      user.followers += 1;
-      user.btnClick = true;
-      toast.success(
-        `Added follower for ${user.username}. All fillovers: ${user.followers}`,
-        toastOptions
-      );
-    },
+    toggleBtn(state, action) {
+      for (const user of state.users) {
+        if (!user.btnClick) {
+          if (user.id === action.payload) {
+            user.followers += 1;
+            user.btnClick = !user.btnClick;
 
-    decrement(state, action) {
-      const user = state.users.find(user => user.id === action.payload);
-      user.followers -= 1;
-      user.btnClick = false;
-      toast.warn(
-        `Removed follower for ${user.username}.
-        All fillovers:${user.followers}`,
-        toastOptions
-      );
+            toast.success(
+              `Added follower for ${user.username}. All fillovers: ${user.followers}`,
+              toastOptions
+            );
+            break;
+          }
+        } else {
+          if (user.id === action.payload) {
+            user.followers -= 1;
+            user.btnClick = !user.btnClick;
+            toast.warn(
+              `Removed follower for ${user.username}.
+              All fillovers:${user.followers}`,
+              toastOptions
+            );
+            break;
+          }
+        }
+      }
     },
   },
 });
 
-export const { increment, decrement } = usersSlice.actions;
+export const { toggleBtn } = usersSlice.actions;
 export const usersReducer = usersSlice.reducer;
