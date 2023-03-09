@@ -51,7 +51,7 @@ export const Profile = ({
 
           <Stats>
             <Item>
-              <span>{tweets}</span>
+              <Numeral value={tweets} format={'0,0'} />
               <span> Tweets</span>
             </Item>
             <Item>
